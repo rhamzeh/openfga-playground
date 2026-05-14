@@ -1,0 +1,83 @@
+{
+  "name": "@openfga/frontend-utils",
+  "version": "0.2.0",
+  "description": "Monaco language integration, theming, and graph utilities for OpenFGA UIs",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openfga/playground.git",
+    "directory": "packages/frontend-utils"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./constants": {
+      "types": "./dist/constants/index.d.ts",
+      "import": "./dist/constants/index.js",
+      "require": "./dist/constants/index.cjs"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js",
+      "require": "./dist/theme/index.cjs"
+    },
+    "./monaco": {
+      "types": "./dist/monaco/index.d.ts",
+      "import": "./dist/monaco/index.js",
+      "require": "./dist/monaco/index.cjs"
+    },
+    "./documentation": {
+      "types": "./dist/documentation/index.d.ts",
+      "import": "./dist/documentation/index.js",
+      "require": "./dist/documentation/index.cjs"
+    },
+    "./prism": {
+      "types": "./dist/prism/index.d.ts",
+      "import": "./dist/prism/index.js",
+      "require": "./dist/prism/index.cjs"
+    },
+    "./graph": {
+      "types": "./dist/graph/index.d.ts",
+      "import": "./dist/graph/index.js",
+      "require": "./dist/graph/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openfga/syntax-transformer": "^0.2.1"
+  },
+  "peerDependencies": {
+    "monaco-editor": "^0.55.1"
+  },
+  "peerDependenciesMeta": {
+    "monaco-editor": {
+      "optional": true
+    }
+  }
+}

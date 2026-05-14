@@ -1,0 +1,30 @@
+{
+  "name": "@openfga/playground",
+  "version": "0.0.0",
+  "description": "OpenFGA Playground shell application",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "test": "if find tests -type f \\( -name '*.spec.ts' -o -name '*.test.ts' \\) 2>/dev/null | grep -q .; then playwright test; else echo 'No playground tests found; skipping.'; fi",
+    "preview": "vite preview",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@nanostores/lit": "^0.2.3",
+    "@openfga/frontend-utils": "workspace:*",
+    "@openfga/playground-components": "workspace:*",
+    "@openfga/playground-core": "workspace:*",
+    "lit": "^3.3.3",
+    "nanostores": "^1.3.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.7.0",
+    "monaco-editor": "^0.55.1",
+    "vite": "^8.0.12"
+  }
+}

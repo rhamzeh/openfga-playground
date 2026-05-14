@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenFGA Playground</title>
+    <link rel="icon" type="image/png" href="/openfga-icon.png" />
+    <style>
+      /* Global CSS custom property tokens — inherited by all shadow roots.
+         Dark theme is the default; light theme activates via .openfga-light on <html>. */
+      :root {
+        --openfga-bg-primary: #1e1e2e;
+        --openfga-bg-secondary: #181825;
+        --openfga-bg-elevated: #313244;
+        --openfga-border: #45475a;
+        --openfga-text-primary: #cdd6f4;
+        --openfga-text-secondary: #a6adc8;
+        --openfga-text-link: #89b4fa;
+        --openfga-accent: #89b4fa;
+        --openfga-accent-hover: #74c7ec;
+        --openfga-accent-text: #1e1e2e;
+        --openfga-success: #a6e3a1;
+        --openfga-error: #f38ba8;
+        --openfga-warning: #fab387;
+        --openfga-editor-bg: #1e1e2e;
+        --openfga-editor-gutter: #181825;
+        
+        --openfga-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --openfga-font-mono: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+        --openfga-font-size-base: 14px;
+        --openfga-font-size-sm: 12px;
+        --openfga-font-size-lg: 16px;
+        --openfga-space-xs: 4px; --openfga-space-sm: 8px;
+        --openfga-space-md: 16px; --openfga-space-lg: 24px; --openfga-space-xl: 32px;
+        --openfga-radius-sm: 4px; --openfga-radius-md: 6px;
+        --openfga-radius-lg: 8px; --openfga-radius: 8px;
+        --openfga-transition-fast: 100ms ease;
+        --openfga-transition-base: 200ms ease;
+      }
+      /* Light theme — Catppuccin Latte. All text/bg pairs verified WCAG AA. */
+      .openfga-light {
+        --openfga-bg-primary: #eff1f5;
+        --openfga-bg-secondary: #e6e9ef;
+        --openfga-bg-elevated: #dce0e8;
+        --openfga-border: #bcc0cc;
+        --openfga-text-primary: #4c4f69;
+        --openfga-text-secondary: #6c6f85;
+        --openfga-text-link: #1e66f5;
+        --openfga-accent: #1e66f5;
+        --openfga-accent-hover: #209fb5;
+        --openfga-accent-text: #eff1f5;
+        --openfga-success: #40a02b;
+        --openfga-error: #d20f39;
+        --openfga-warning: #fe640b;
+        --openfga-editor-bg: #eff1f5;
+        --openfga-editor-gutter: #e6e9ef;
+        --openfga-graph-node-text: #eff1f5;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { height: 100%; overflow: hidden; }
+      body { background: var(--openfga-bg-primary); }
+    </style>
+  </head>
+  <body>
+    <openfga-playground></openfga-playground>
+    <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+version: '3'
+
+tasks:
+  install:
+    desc: Install all dependencies
+    cmds:
+      - pnpm install
+
+  build:
+    desc: Build all packages in dependency order
+    cmds:
+      - pnpm -r run build
+
+  build:core:
+    desc: Build @openfga/playground-core only
+    cmds:
+      - pnpm --filter @openfga/playground-core run build
+
+  build:components:
+    desc: Build @openfga/playground-components only
+    cmds:
+      - pnpm --filter @openfga/playground-components run build
+
+  build:playground:
+    desc: Build @openfga/playground shell only
+    cmds:
+      - pnpm --filter @openfga/playground run build
+
+  dev:
+    desc: Start playground shell dev server (requires fga serve running)
+    cmds:
+      - pnpm --filter @openfga/playground run dev
+
+  test:
+    desc: Run all tests across all packages
+    cmds:
+      - pnpm -r run test
+
+  test:core:
+    desc: Run core package tests only
+    cmds:
+      - pnpm --filter @openfga/playground-core run test
+
+  test:components:
+    desc: Run component package tests only
+    cmds:
+      - pnpm --filter @openfga/playground-components run test
+
+  lint:
+    desc: Run ESLint + Prettier check across all packages
+    cmds:
+      - pnpm -r run lint
+
+  typecheck:
+    desc: Run TypeScript type check across all packages
+    cmds:
+      - pnpm -r run typecheck
+
+  clean:
+    desc: Remove all build artifacts
+    cmds:
+      - pnpm -r run clean
+
+  ci:
+    desc: Full CI sequence (typecheck, lint, build, test)
+    cmds:
+      - task: typecheck
+      - task: lint
+      - task: build
+      - task: test

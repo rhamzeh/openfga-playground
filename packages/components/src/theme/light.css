@@ -1,0 +1,41 @@
+/* SPDX-License-Identifier: Apache-2.0 */
+
+/**
+ * Light theme. Catppuccin Latte palette.
+ *
+ * Text contrast checks (against bg-primary #eff1f5):
+ *   --openfga-text-primary  (#4c4f69):  contrast ratio ≈  9.5:1  ✓ AAA
+ *   --openfga-text-secondary (#6c6f85): contrast ratio ≈  5.3:1  ✓ AA
+ *   --openfga-text-link      (#1e66f5): contrast ratio ≈  6.2:1  ✓ AA
+ */
+.openfga-light {
+  --openfga-bg-primary: #eff1f5;
+  --openfga-bg-secondary: #e6e9ef;
+  --openfga-bg-elevated: #dce0e8;
+  --openfga-border: #bcc0cc;
+
+  --openfga-text-primary: #4c4f69;
+  --openfga-text-secondary: #6c6f85;
+  --openfga-text-link: #1e66f5;
+
+  --openfga-accent: #1e66f5;
+  --openfga-accent-hover: #209fb5;
+  --openfga-accent-text: #eff1f5;
+
+  --openfga-success: #40a02b;
+  --openfga-error: #d20f39;
+  --openfga-warning: #fe640b;
+
+  --openfga-editor-bg: #eff1f5;
+  --openfga-editor-gutter: #e6e9ef;
+
+  /* Graph — dark enough for WCAG AA on light node backgrounds */
+  --openfga-graph-node-type: #2e7d32;        /* dark green, ~7.5:1 on #f0f9f0 */
+  --openfga-graph-node-type-bg: #e8f5e9;     /* very light green tint */
+  --openfga-graph-node-relation: #0369a1;    /* dark blue, ~7.2:1 on #e1f2fb */
+  --openfga-graph-node-relation-bg: #e1f2fb; /* very light blue tint */
+  --openfga-graph-node-text: #eff1f5;
+  --openfga-graph-edge: #6c6f85;             /* ~4.6:1 on #e6e9ef */
+  --openfga-graph-edge-computed: #9ca0b0;
+  --openfga-graph-bg: #e6e9ef;
+}

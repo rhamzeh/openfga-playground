@@ -1,0 +1,30 @@
+{
+  "name": "openfga-playground-monorepo",
+  "private": true,
+  "version": "0.0.0",
+  "description": "OpenFGA Playground monorepo",
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm --filter @openfga/playground run dev",
+    "test": "pnpm -r run test",
+    "test:e2e": "playwright test",
+    "lint": "eslint packages/",
+    "typecheck": "pnpm -r run typecheck",
+    "clean": "pnpm -r run clean"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
+    "eslint": "^10.3.0",
+    "eslint-plugin-lit": "^2.3.1",
+    "prettier": "^3.8.3",
+    "tsup": "^8.0.0",
+    "typescript": "^6.0.3",
+    "vitest": "^4.1.6"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@11.1.1"
+}

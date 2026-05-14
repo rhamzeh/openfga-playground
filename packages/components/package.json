@@ -1,0 +1,118 @@
+{
+  "name": "@openfga/playground-components",
+  "version": "0.1.0",
+  "description": "Lit Web Components for OpenFGA Playground",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/openfga/playground.git",
+    "directory": "packages/components"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./model-editor": {
+      "types": "./dist/model-editor/index.d.ts",
+      "import": "./dist/model-editor/index.js",
+      "require": "./dist/model-editor/index.cjs"
+    },
+    "./model-graph": {
+      "types": "./dist/model-graph/index.d.ts",
+      "import": "./dist/model-graph/index.js",
+      "require": "./dist/model-graph/index.cjs"
+    },
+    "./model-diff": {
+      "types": "./dist/model-diff/index.d.ts",
+      "import": "./dist/model-diff/index.js",
+      "require": "./dist/model-diff/index.cjs"
+    },
+    "./tuple-manager": {
+      "types": "./dist/tuple-manager/index.d.ts",
+      "import": "./dist/tuple-manager/index.js",
+      "require": "./dist/tuple-manager/index.cjs"
+    },
+    "./assertion-runner": {
+      "types": "./dist/assertion-runner/index.d.ts",
+      "import": "./dist/assertion-runner/index.js",
+      "require": "./dist/assertion-runner/index.cjs"
+    },
+    "./resolution-path": {
+      "types": "./dist/resolution-path/index.d.ts",
+      "import": "./dist/resolution-path/index.js",
+      "require": "./dist/resolution-path/index.cjs"
+    },
+    "./connection-config": {
+      "types": "./dist/connection-config/index.d.ts",
+      "import": "./dist/connection-config/index.js",
+      "require": "./dist/connection-config/index.cjs"
+    },
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.js",
+      "require": "./dist/theme/index.cjs"
+    },
+    "./changelog": {
+      "types": "./dist/changelog/index.d.ts",
+      "import": "./dist/changelog/index.js",
+      "require": "./dist/changelog/index.cjs"
+    },
+    "./query-runner": {
+      "types": "./dist/query-runner/index.d.ts",
+      "import": "./dist/query-runner/index.js",
+      "require": "./dist/query-runner/index.cjs"
+    },
+    "./relationship-graph": {
+      "types": "./dist/relationship-graph/index.d.ts",
+      "import": "./dist/relationship-graph/index.js",
+      "require": "./dist/relationship-graph/index.cjs"
+    },
+    "./dev-console": {
+      "types": "./dist/dev-console/index.d.ts",
+      "import": "./dist/dev-console/index.js",
+      "require": "./dist/dev-console/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": [
+    "dist/**/*.js",
+    "dist/**/*.mjs",
+    "dist/**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint src/",
+    "typecheck": "tsc --noEmit",
+    "test": "if find src -type f \\( -name '*.test.ts' -o -name '*.test.js' -o -name '*.spec.ts' -o -name '*.spec.js' \\) | grep -q .; then web-test-runner --coverage; else echo 'No component tests found; skipping.'; fi",
+    "clean": "rm -rf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@openfga/frontend-utils": "workspace:*",
+    "cytoscape": "^3.33.3",
+    "cytoscape-dagre": "^2.5.0",
+    "lit": "^3.3.3",
+    "monaco-editor": "^0.55.1"
+  },
+  "devDependencies": {
+    "@open-wc/testing": "^4.0.0",
+    "@web/test-runner": "^0.20.2"
+  }
+}
